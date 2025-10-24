@@ -1,0 +1,17 @@
+crimes['hour'] = crimes['TIME OCC'].str[0:2]
+peak_crime_hour_str = crimes["hour"].value_counts().idxmax()
+peak_crime_hour = int(peak_crime_hour_str)
+print(peak_crime_hour)
+
+crimes['night'] = (crimes['hour'] > '22') | (crimes['hour'] < '4')
+crimes_night = crimes[crimes['night'] == True]
+peak_night_crime_location = crimes_night['AREA NAME'].value_counts().idxmax()
+print(peak_night_crime_location)
+
+group_bins = [0,17,25,34,44,54,64,100]
+group_labels = ["0-17", "18-25", "26-34", "35-44", "45-54", "55-64", "65+"]
+crimes['age_group'] = pd.cut(crimes['Vict Age'], bins=group_bins, labels=group_labels)
+victim_ages = crimes['age_group'].value_counts()
+print(victim_ages)
+print(crimes[['Vict Age', 'age_group']])
+
