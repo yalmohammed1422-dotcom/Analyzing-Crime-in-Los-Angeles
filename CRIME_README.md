@@ -15,7 +15,7 @@ This project analyzes LA crime data to uncover critical insights about:
 - **Night Crime Focus**: Analyzes crimes occurring between 10 PM and 4 AM
 - **Geographic Insights**: Determines high-risk areas, especially at night
 - **Demographic Analysis**: Examines crime victims by age groups
-- **Comprehensive Visualizations**: 9 matplotlib charts revealing crime patterns
+- **Comprehensive Visualizations**: 7 matplotlib charts revealing crime patterns
 
 ## Requirements
 
